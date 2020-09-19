@@ -134,22 +134,39 @@ $$
 
 
 - addition & subtraction
-$$
-\begin{aligned}
-\underline{v} + \underline{w} =& (v_1 + w_1) \underline{\delta}_1 + (v_2+w_2)\underline{\delta}_2 + (v_3 + w_3)\underline{\delta}_3 \\ =& \sum_i (v_i +w_i)\underline{\delta}_i
-\end{aligned}
-$$ 
+$$\underline{v} + \underline{w} = (v_1 + w_1) \underline{\delta}_1 + (v_2+w_2)\underline{\delta}_2 + (v_3 + w_3)\underline{\delta}_3 = \sum_i (v_i +w_i)\underline{\delta}_i $$ 
 
 - multiplication by a scalar
+$$a\underline{v} = av_1 \underline{\delta}_1 + av_2 \underline{\delta}_2 + av_3 \underline{\delta}_3 = \sum_i av_i \underline{\delta}_i $$ 
+
+- dot product of two vectors
+$$\underline{v} · \underline{w} = v_1 w_1 + v_2 w_2 + v_3 w_3 = \sum_i v_i w_i$$ 
+
+- cross product of two vectors
+$$\underline{v}\times\underline{w} = (v_2 w_3 - v_3 w_2)\underline{\delta}_1 +(v_3 w_1 - v_1 w_3)\underline{\delta}_2 + (v_1 w_2 - v_2 w_1)\underline{\delta}_3 = \sum_{i,j,k} \epsilon_{ijk} v_i w_j \underline{\delta}_k$$ 
+
 $$
 \begin{aligned}
-a\underline{v} =& av_1 \underline{\delta}_1 + av_2 \underline{\delta}_2 + av_3 \underline{\delta}_3 \\
-               =& \sum_i av_i \underline{\delta}_i
+a \times b =& (a_1 i + a_2 j + a_3 k) \times (b_1 i + b_2 j + b_3 k) \\
+           =& a_1 b_1 (i \times i) + a_1 b_2 (i \times j) + a_1 b_3 (i \times k) \\
+           & + a_2 b_1 (j \times i) + a_2 b_2 (j \times j) + a_2 b_3 (j \times k) \\
+           & + a_3 b_1 (k \times i) + a_3 b_2 (k \times j) + a_3 b_3 (k \times k) \\
+           =& -a_1 b_1 0 + a_1 b_2 k - a_1 b_3 j \\
+           & -a_2 b_1 k -a_2 b_2 0 + a_2 b_3 i \\
+           &+ a_3 b_1 j - a_3 b_2 i - a_3 b_3 0 \\
+           =& (a_2 b_3 -a_3 b_2)i + (a_3 b_1 -a_1 b_3)j +(a_1 b_2 -a_2b_1)k
 \end{aligned}
 $$ 
 
-
-
+- $\epsilon_ijk$, named as permutation symbol, has the following properties:
+$$\epsilon_ijk = \left\{
+    \begin{array}{lr}
+        +1, & if\ ijk\ = even\ permutation\ (123,231,312) \\
+        -1, & if\ ijk\ = odd\ permutation\ (321,132,213) \\
+        0,  & if \  any \ two\ indices\ are\ alike
+    \end{array}
+\right.
+$$
 
 
 
