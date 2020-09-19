@@ -35,8 +35,8 @@ Yi He
     + The first paper reporting a molecular dynamics simulation was written by Alder and Wainwright in 1957.
 - First MD simulation using continuous potentials ( 1964)
     + RDF : ridial distribution function
-    + MSD : mean square displa <++>
-    + VACF : 速度自相关函数 <++>
+    + MSD : mean square deviation
+    + VACF : 速度自相关函数 velocity autocorrection function
 - Loup Verlet calculated in 1967 **the phase diagram of argon** using the Lennard-Jones potential, and computed correlation functions to test theories of the liquid state. The bookkeeping devide which became konwn as **Berlet neighbor list** was introduced in these papers. Moreover the "**Verlet time integration algorithm**" was used. Phase transitions in the same system were investigated by Hansen and Verlet.
 
 #### Computational methods in molecular modelling
@@ -67,12 +67,92 @@ but this mechanism is not adequate, eg. OEG, SAMs, maniitol SAMs.
 
 both of them contain hydrogen-bond donors, but they are nonfouling.
 
-**Simulation methods** - Monte Carlo, Molecular Dynamics
+## simulation components
+
+#### Simulation methods
+
+Monte Carlo, Molecular Dynamics : both techniques require force fields as inputs
+
 
 **Monte Carlo** 
-- step 1 
+
+```
+    step 1 : generate initial structure R. calculate V(R)
+    step 2 : modify structure to R', calculate V' = V(R')
+    step 3 :  If V' < V then 
+                  R <- R', V <- V'
+              else
+                  generate random number RAND
+                  if e^{-(V'-V)/kT} > RAND
+                      R <- R', V <- V'
+                  endif
+              endif
+    step 4 : repeat step 2-3 for N steps
+```
+- energy driven process
+- orientation and adsorption
 
 
+**molecular dynamics**
+```
+    step 1 : generate initial structure R, r_{i}(0)
+    step 2 : generate initial velocity v_{i}(0)
+    step 3 : calculate V_{i}(t,R) -> F_{i}(t) = -dV_{i}(t)/dr_{i}(t)
+             solve Newton's Law F_{i} = m_{i} \times a_{i}
+             Update
+                r_{i}(t+ \delta t) = r_{i}(t) + v_{i}(t) \delta t + 0.5a_{i}(t)\delta t^2
+                v_{i}(t+\delta t) = v_{i}(t) + 0.5[a_{i}(t) + a_{i}(t+\delta t)] \delta t
+    step 4 : repeat step 3 for N steps
+```
 
+- force driven process
+- conformational structure and time correlation properties
 
+#### components of one simulation software 
+
+**developers**
+- Jie Zheng
+- Jian Zhou
+- Yi He
+
+**inputs**
+- molecule lists
+- nonbond lists
+    + brute search algorithm
+- active lists
+- constraint list
+- initial velocity
+    + maxwell algorithm
+
+**engine**
+- molecular dynamics
+    + residue and all-atom models
+- force fields
+    + CHARMM, UFF, self-defined FF
+- energy and force calculation
+    + intra : bond, angle, UB, dihedral, improper
+    + inter : VDW & Electrostatic
+- neighbor lists
+    + Atom, group, and cell lists
+- constraint method
+    + Harmonical and Fixed
+- P.B.C.
+    + Arbitrary P.B.C.
+- temperature control
+    + velocity scaling, Berendsen
+- shear movements & controls
+
+**analysis**
+- structure
+    + MSD, RDF, density, dipole distribution, RMSD, radius of gyration
+- Friction anlysis
+- solvent dynamics
+- hydrogen bonds
+- multipole components
+- energy components
+
+#### analysis
+
+- rasidence time dynamics of water around surface
+- reorientational dynamics of water around surface
 
