@@ -148,7 +148,7 @@ $$\underline{v}\times\underline{w} = (v_2 w_3 - v_3 w_2)\underline{\delta}_1 +(v
 $$
 \begin{aligned}
 a \times b =& (a_1 i + a_2 j + a_3 k) \times (b_1 i + b_2 j + b_3 k) \\
-           =& a_1 b_1 (i \times i) + a_1 b_2 (i \times j) + a_1 b_3 (i \times k) \\
+           =& \ a_1 b_1 (i \times i) + a_1 b_2 (i \times j) + a_1 b_3 (i \times k) \\
            & + a_2 b_1 (j \times i) + a_2 b_2 (j \times j) + a_2 b_3 (j \times k) \\
            & + a_3 b_1 (k \times i) + a_3 b_2 (k \times j) + a_3 b_3 (k \times k) \\
            =& -a_1 b_1 0 + a_1 b_2 k - a_1 b_3 j \\
@@ -172,7 +172,24 @@ $$
 
 #### summary of algebraic operations
 
-<++>
+the algebraic operations of vectors can be done in terms of components as:
+
+$$\underline{v} \pm \underline{w} = \sum_i v_i \underline{\delta}_i \pm \sum_i w_i \underline{\delta}_i = \sum_i (v_i \pm w_i)\underline{\delta}_i $$ 
+
+$$a\underline{v} = a(v_1 \underline{\delta}_1 + v_2\underline{\delta}_2 + v_3\underline{\delta}_3) = \sum_i (av_i)\underline{\delta}_i$$ 
+
+$$\underline{v}·\underline{w} = \left[ \sum_i \underline{\delta}_i v_i \right] · \left[ \sum_j \underline{\delta}_j w_j \right] = \sum_i \sum_j (\underline{\delta}_i · \underline{\delta}_j)v_i w_j = \sum_i \sum_j \delta_{ij} v_i w_j = \sum_i v_i w_i$$ 
+
+$$\underline{v} \times \underline{w} = \left[ \sum_j \underline{\delta}_j v_j \right] \times \left[ \sum_k \underline{\delta}_k w_k \right] = \sum_j \sum_k \left[\underline{\delta}_j \times \underline{\delta}_k \right] v_j w_k = \sum_i \sum_j \sum_k \epsilon_{ijk} \underline{\delta}_i v_j w_k = \begin{bmatrix} \underline{\delta}_1 &  \underline{\delta}_2 & \underline{\delta}_3 \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3 \end{bmatrix}$$
+
+here, we introduced two new quantities: the Kronecker delta $\delta_{ij}$ and the permutation symbol $\epsilon_{ijk}$, they are defined as:
+
+$$\delta_{ij} = \left\{ \begin{array}{lr} +1, & if \ i=j \\ 0, & if \ i \ne j \end{array}\right.$$
+
+$$\epsilon_{ijk} = \left\{ \begin{array}{lr} +1, & if \ ijk = even \ permutation \ (123,231,312)\\ -1, & if \ ijk = odd \ permutation \ (321, 132, 213) \\ 0, & if \ any \ two \ indices \ are \ alike \end{array}\right.$$
+
+$$(\underline{\delta}_i · \underline{\delta}_j)  = \delta_{ij}$$ 
+$$\left[ \underline{\delta}_i \times \underline{\delta}_j \right] = \sum_{k=1}^3 \epsilon_{ijk}\underline{\delta}_k$$ 
 
 
 ## Lecture 2. Vectors and Tensors in Cartesian Coordinates
