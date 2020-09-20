@@ -106,7 +106,7 @@ The magnitude is altered by a factor |k|. The direction keeps the same or revers
 
 #### Dot product of two vectors
 
-$$\underline{v} · \underline{w} = vwcos\phi_{\underline{v}\underline{w}}$$ 
+$$\underline{v} · \underline{w} = vw\cos\phi_{\underline{v}\underline{w}}$$ 
 
 the dot prduct of two vectors is a scalar.
 
@@ -122,7 +122,7 @@ $$\underline{w}·(\underline{u} + \underline{v} = (\underline{w}·\underline{u})
 
 #### cross product of two vectors
 
-$$\underline{v} \times \underline{w} = (vwsin\phi_{\underline{v}\underline{w}})\underline{n}_{\underline{v}\underline{w}}$$ 
+$$\underline{v} \times \underline{w} = (vw\sin\phi_{\underline{v}\underline{w}})\underline{n}_{\underline{v}\underline{w}}$$ 
 
 the cross product of two vectors is a new vector perpendicular to both the vectors by right hand rule.
 
@@ -206,32 +206,63 @@ $$\left[ \underline{\delta}_i \times \underline{\delta}_j \right] = \sum_{k=1}^3
 
 ## Lecture 2. Vectors and Tensors in Cartesian Coordinates
 
-#### review
+#### intended learning outcomes
 
-$$(\delta_i · \delta_j) = 0 if cos(i, j) = 90$$
+- perform dot product, cross product and dyadic product of two vectors
+- explain the concept of tensors
+- use dyads and matrix forms to describe tensors
+- decompose a second-order densor
+- perform dot product, cross product, double dot product for tensors
+- use transformation rules on coordinate rotation
 
-$$(\delta_i \times \delta_j) = \sum_{k=1} ...$$
+#### important formula
 
-$$hhhhh_$$ 
+$$\sum_{j+1}^3 \sum_{k=1}^3 \epsilon_{ijk} \epsilon_{hjk} = 2 \underline{\delta}_{ih}$$ 
+$$\sum_{k=1}^3 \epsilon_{ijk} \epsilon_{mnk} = \delta_{im} \delta_{jn} - \delta_{in} \delta_{jm}$$ 
+$$\epsilon_{ijk} = \frac{1}{2} (i-j)(j-k)(k-i)$$ 
 
-#### cnocept of Tensors
+#### concept of Tensors
 
-Teh concept of tensors came from the physical quantities with characteristics connected to more than **one direction**.
+the concept of tensors came from the physical quantities with characteristics connected to more than **one direction**.
+
+**Stress tensor T**
+$$\left[ \begin{matrix} T_{xx} & T_{xy} & T_{xz} \\ T_{yx} & T_{yy} & T{yz} \\ T_{zx} & T_{zy} & T_{zz} \end{matrix}\right] = \left[ \begin{matrix} \sigma_x & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \sigma_y & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \sigma_z \end{matrix} \right]$$ 
+
+- $T_{ij}$ = force on face i in direction j
+- $\sigma_i$ = normal stress
+- $\tau_{ij}$ = shear stress
 
 #### Dyadic Product & Dyads
 
 - the dyadic product of two vectors **a** and **b**, donoted as **ab**, forms a 2nd-order tensor.
 
-$$ab = ab^t$$
+$$\underline{a} \underline{b} = \underline{a}\underline{b}^T = \left( \begin{matrix}a_1  \\ a_2 \\ \vdots  \\ a_N \end{matrix} \right)(\begin{matrix}b_1 & b_2 & \cdots & b_N\end{matrix}) = \left(\begin{matrix} a_1 b_1 & a_1 b_2 & \cdots & a_1 b_N \\ a_2 b_1 & a_2 b_2 & \cdots & a_2 b_N \\ \vdots & \vdots & \ddots & \vdots \\ a_N b_1 & a_N b_2 & \cdots & a_N b_N \end{matrix}\right)$$
+
+this mathematic object $\underline{ab}$ is called the dyad of $\underline{a}$ and $\underline{b}$.
 
 #### unit dyads
 
-with the help of unit dyads, the dyadic product of two vectors can be defined analytically as:
-$$_vw_ = \sum_{i} v_{i}\sigma_{i}$$ 
+the dyads formed by the base vectors are named unit dyads, $\underline{\delta}_i \underline{\delta}_j$. there are total 9 unit dyads. the dyadic product operations between unit dyads and base vectors are as follows:
+$$\underline{\delta}_k · \underline{\delta}_i \underline{\delta}_j = \left\{ \begin{array}{lr}\underline{0} & as \ k \ne i \\ \underline{\delta}_j & as \ k = j \end{array} \right. $$ 
+$$\underline{\delta}_i \underline{\delta}_j · \underline{\delta}_k = \left\{ \begin{array}{lr}\underline{0} & as \ k \ne j \\ \underline{\delta}_i & as \ k = j \end{array} \right. $$ 
 
-<++>
+with the help of unit dyads, the dyadic product of two vectors can be defined analytically as:
+$$\underline{v}\underline{w} = \sum_{i} v_{i}\underline{\delta}_{i} \sum_j w_j \underline{\delta}_j = \sum_i \sum_j v_i w_j \underline{\delta}_i \underline{\delta}_j $$ 
+
+$$\underline{u} · \underline{v} \underline{w} = \left( \sum_i u_k \underline{\delta}_k · \sum_i v_i \underline{\delta}_i \right) \sum_j w_j \underline{\delta}_j = \sum_i \sum_j u_i v_i w_i \underline{\delta}_j$$ 
+
+$$\underline{v}\underline{w} · \underline{u} = \sum_i v_i \underline{\delta}_i \left( \sum_j w_j \underline{\delta}_j · \sum_k u_k \underline{\delta}_k \right) = \sum_i \sum_j u_j w_j v_i \underline{\delta}_i$$ 
 
 #### second-order tensors
+
+a sum of dyads is called a tensor of second-order, denoted as:
+$$\underline{\underline{\tau}}= \underline{a} \underline{b} + \underline{c}\underline{d} + ... + \underline{v}\underline{w} + ...$$ 
+
+it can be expressed analytically as:
+
+$$\sum_i \sum_j \tau_{ij} \underline{\delta}_i \underline{\delta}_j = \sum_i \sum_j (a_i b_j + c_i d_j + ... + v_i w_j + ...) \underline{\delta}_i \underline{\delta}_j$$ 
+
+$\tau_{ij}$ are callet the components of the tensor $\underline{\underline{\tau}}$
 
 
 #### matrix notation of second-order tensors
