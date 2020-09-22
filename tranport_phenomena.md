@@ -299,6 +299,20 @@ the two indices alike are called <++>
 #### transformation rules ot <++>
 
 
+####  transformation rules ot tensor components in rotation of coordinates
+
+<++>
+
+## lecture 3. vectors and tensors in cur<++>
+
+<++>
+
+**lame coefficient**
+
+<++>
+
+
+
 
 
 
