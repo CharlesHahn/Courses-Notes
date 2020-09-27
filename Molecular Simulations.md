@@ -177,3 +177,82 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - ideal values of bond lengths, angles, and torsions, depends on more than just the atomic number, e.g., there are different "types" of the same atom
 - a "force field" is defined by its atom types, its functions for computing strain, and the ideal constants that appear in those functions
 
+## Tutorials on Linux cluster, Monte Carlo and Molecular Dynamics Methods
+
+#### Linux
+
+- **shell** interprets the commands and request service from kernel
+- Similar to DOS but DOS has onjy one set of interface while Linux can select different shell
+    + Bourne Again shell(bash)
+    + TC shell (Tcsh)
+    + Z shell (Zsh)
+- different shell has similar but different functionality
+- bash is the default for Linux
+- Graphical user interface of Linux is in fact an application program work on the shell
+- UNIX is case sensitive
+- UNIX filename contain only letters, numbers, underscore, dot, dash characters
+- the extension can be any legal characters
+- convert plain text files from DOS/MacOS to UNIX format: $ dos2unix
+- only one file in the same directory with the same name
+- always backup your source code and data
+
+#### Linux system
+
+/
+    - bin
+    - dev
+    - etc
+    - home
+        - larry
+        - neo
+    - lib
+    - proc
+    - tmp
+    - usr
+    - var
+
+#### Linux Command
+
+- compress - compress file1
+- diff f1 f2
+- du summarized disk usage of your home directory
+- find (find ./ -name .cshrc -print) search and print
+- grep (grep student \*) search all files with the word "student"
+- history (history 50) find the last 50 commands stored in the shell
+- kill (kill -9 2036) terminate the process with pid 2036
+- ps (ps -ef) find out all process run in the systems
+- lpr (lpr -h f1 f2) print f1, f2 without header page
+- man (man tar) displaying the manual page on-line
+- nohup (nohup matlab < a &) pun matlab (a.m) without hang up after logout
+- sort (sort -r -n studno) sort studno in reverse numerical order
+- tar (tar czvf/xzvf abc.tar.gz abc/) create archive file, z means zip, c means compress, v means verbose
+- uncompress (uncompress file1.Z) the oppsite of compress
+- wc (wc -l f1) count the number of lines in f1
+- who who is on line
+- whoami identify yourself
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
