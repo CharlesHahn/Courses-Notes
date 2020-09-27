@@ -177,7 +177,35 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - ideal values of bond lengths, angles, and torsions, depends on more than just the atomic number, e.g., there are different "types" of the same atom
 - a "force field" is defined by its atom types, its functions for computing strain, and the ideal constants that appear in those functions
 
+#### the constants
+
+- more atom types, the more sensitive the force field is
+- every atom type requires a defination of a force constant, k, and an equilibrium length, $r_{eq}$, between it and, in principle, every atom type difined so far
+- NUmber of bond stretch parameters goes up as N^2 where N is the number of atom types...
+- assignment of parameters from experimental dada or from hign level QM calculations
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Tutorials on Linux cluster, Monte Carlo and Molecular Dynamics Methods
+
+#### Numerous Websites
+
+- http://www.ch.embnet.org/MD_tutorial/
+- http://www.ece.uci.edu/~sjenks/Presentations/Linux%20Clustering.pdf
+- http://www.sci.hkbu.edu.hk/hpccc/sciblade/course/linux/linuxNcluster.ppt
+- http://www.centors.org/docs/5/pdf/Cluster_Administration.pdf
+- http://www.ele.polyu.edu.hk/~enpklun/ENG224/Linux.ppt
+- http://www.csun.edu/~vcact00f/311/termProjects/700class/Linux.ppt
 
 #### Linux
 
@@ -199,17 +227,21 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 #### Linux system
 
 /
-    - bin
-    - dev
-    - etc
-    - home
+    - bin : Important Linux commands available to the average user.
+    - boot : the files necessary for the system to boot. Not all linux distribution use this one. Fedora does
+    - dev : all device drivers. Device drivers are the files that system uses to talk for hardware.
+    - etc : system configuration files.
+    - home : every user except root gets its own folder in here.
         - larry
         - neo
-    - lib
+    - lib : system libraries. Libraries are lust bunches of programming code that the programs on this system use to get things done.
     - proc
-    - tmp
-    - usr
-    - var
+    - mnt : Mount point. 
+    - root : the root user's home directory.
+    - sbin : essential commands that are only for the system administrator.
+    - tmp : temporary files and storage space. 
+    - usr : programs and data that can be shared across many system and don't need to be changed.
+    - var : data that changes constantly ( log files that contain information about system and something)
 
 #### Linux Command
 
@@ -223,24 +255,13 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - ps (ps -ef) find out all process run in the systems
 - lpr (lpr -h f1 f2) print f1, f2 without header page
 - man (man tar) displaying the manual page on-line
-- nohup (nohup matlab < a &) pun matlab (a.m) without hang up after logout
+- nohup (nohup matlab < a &) run matlab (a.m) without hang up after logout
 - sort (sort -r -n studno) sort studno in reverse numerical order
 - tar (tar czvf/xzvf abc.tar.gz abc/) create archive file, z means zip, c means compress, v means verbose
 - uncompress (uncompress file1.Z) the oppsite of compress
 - wc (wc -l f1) count the number of lines in f1
 - who who is on line
 - whoami identify yourself
-
-
-
-
-
-
-
-
-
-
-
 
 
 
