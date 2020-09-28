@@ -182,7 +182,7 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - more atom types, the more sensitive the force field is
 - every atom type requires a defination of a force constant, k, and an equilibrium length, $r_{eq}$, between it and, in principle, every atom type difined so far
 - NUmber of bond stretch parameters goes up as N^2 where N is the number of atom types...
-- assignment of parameters from experimental dada or from hign level QM calculations
+- assignment of parameters from experimental data or from hign level QM calculations
 
 
 
