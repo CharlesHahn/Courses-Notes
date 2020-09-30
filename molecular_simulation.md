@@ -184,6 +184,27 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - NUmber of bond stretch parameters goes up as N^2 where N is the number of atom types...
 - assignment of parameters from experimental data or from hign level QM calculations
 
+#### torsional strain is a periodic function of tihedral angle
+
+<++>
+
+#### simulation with MM force fields
+
+Monte Carlo (MC) and Molecular Dynamics (MD)
+
+how wo find she lowest point on the PES ?
+- at absolute zero a system in thermal equilibrium state must in the global minimum.
+- increase the efficiency of searching for the global minimum is an active area of research.
+
+some commom search strategies
+- systematically search all coordinates
+- dynamics + "quench"
+- simulated annealing
+- evolutionary/genetic algorithm
+    + allow the good geometries to survive and share properties, but bad ones to die
+
+
+
 
 
 
@@ -262,6 +283,15 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 - wc (wc -l f1) count the number of lines in f1
 - who who is on line
 - whoami identify yourself
+
+#### material studio 0930
+
+- quench 淬火 : 升到高温然后快速降温，得到复杂构型
+- anneal 退火 ： 变化到结构比较合理的状态
+- forcite -> 计算动力学
+    + energy -> 算能量
+    + dynamics -> 做EM
+    + NPT ...
 
 
 
