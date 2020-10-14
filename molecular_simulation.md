@@ -180,7 +180,7 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 #### the constants
 
 - more atom types, the more sensitive the force field is
-- every atom type requires a defination of a force constant, k, and an equilibrium length, $r_{eq}$, between it and, in principle, every atom type difined so far
+- every atom type requires a defination of a force constant, k, and an equilibrium length, $r_{eq}_$, between it and, in principle, every atom type difined so far
 - NUmber of bond stretch parameters goes up as N^2 where N is the number of atom types...
 - assignment of parameters from experimental data or from hign level QM calculations
 
@@ -192,27 +192,58 @@ MD假设：MD在短时间内的模拟cover了实际实验发生的所有情况
 
 Monte Carlo (MC) and Molecular Dynamics (MD)
 
-how wo find she lowest point on the PES ?
+1. how wo find she lowest point on the PES ?
 - at absolute zero a system in thermal equilibrium state must in the global minimum.
 - increase the efficiency of searching for the global minimum is an active area of research.
 
-some commom search strategies
+2. some commom search strategies
 - systematically search all coordinates
 - dynamics + "quench"
+    + roam over the surface, occasionally sliding down to the nearest local minimum.
 - simulated annealing
+    + heat the system up, and cool very slowly.
 - evolutionary/genetic algorithm
     + allow the good geometries to survive and share properties, but bad ones to die
 
+3. phase space - 1d harmohic oscillator ( speed and location)
 
+4. 计算的步长很重要，一般是0.5 - 1 fs，如果更高，就需要对原子的某些采取限制（如 LINCS）
 
+5. Integrating over phase space
+- expectation values are dictated by the relative probabilities of being in different regions of phase space
 
+6. phase space is 6N-dimentional. 3N of position and 3N of momentum.
 
+7. **ergodic dypothesis**
+    - 分子动力学模拟的各态遍历特性
+    - 如果MD的模拟时间足够长，那么体系一定经历了所有可能的状态
 
+8. MC
+- 计算不需要计算导数，只计算速度，会更快
+- 不需要更新全局的数据和坐标
+- MC不能得到时间相关的概念
 
+### lammps software
 
+1. usages: 
+    - MD
+    - EM
+    - MC
 
+2. can model systems from a few particles up to billions of particles
 
+3. open source in C++
 
+4. input files
+    - structure.dat
+        + size of box, atoms types, the position of atoms, etc
+    - In.filename
+        + instructions
+        + ff
+        + position of each atoms
+    - pot.mod 
+        + potential file, contains information about the potential to use
+        + not necessary
 
 
 
@@ -293,17 +324,37 @@ some commom search strategies
     + dynamics -> 做EM
     + NPT ...
 
+#### interaction
+
+- contacts
+    + bond 
+    + angel
+    + proper dihedral(torsion)
+    + improper dihedral (torsion) ( three atoms linked to one atom)
+- non contacts
+    + coulomb
+    + van der vaal
+
+#### 奥本海默近似
+
+原子和电子是一起的，相互之间不会有位移，被认为是一个整体
+
+#### 计算扩散系数和径向分布函数
+
+要考虑 周期性边界条件 导致的误差
+
+要先去周期性，再计算
 
 
 
 
 
+# task
 
+## code a monte carlo MD program in Julia
 
+## MC和MD的结合 - 算抑制剂与蛋白质之间的能量和性质
 
-
-
-
-
-
+1. 小分子与蛋白质结合位置、体位随机 - MC
+2. 选取MC最低能量的构型进行MD
 
