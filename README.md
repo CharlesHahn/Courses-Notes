@@ -1,7 +1,31 @@
-# My course notes.
+# My course notes
 
 - transport phenomena
 - molecular dynamic simulation
 - 生物化工前沿
 - 自然辩证法概论
-
+- Enzyme_Engineering.md
+- LICENSE.txt
+- LICENSE_zh-CN.txt
+- MD Simulation.md
+- microbial.md
+- Mirroring_Life.md
+- molecular_biology.md
+- molecular_simulation.md
+- protein_engineering.md
+- protein_review.md
+- tranport_phenomena.md
+- 合成生物学概论.md
+- 化工原理复习.md
+- 计算机辅助生物过程设计.md
+- 计算机模拟在化工及材料研究中的应用.md
+- 科技论文阅读与写作.md
+- 科技史.md
+- 生化生产工艺学.md
+- 生物反应工程.md
+- 生物分离工程.md
+- 生物化工前沿.md
+- 生物纳米科技概论.md
+- 生物制药选论.md
+- 仪器分析.md
+- 自然辩证法概论.md
