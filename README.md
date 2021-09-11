@@ -5,8 +5,6 @@
 - 生物化工前沿
 - 自然辩证法概论
 - Enzyme_Engineering.md
-- LICENSE.txt
-- LICENSE_zh-CN.txt
 - MD Simulation.md
 - microbial.md
 - Mirroring_Life.md
